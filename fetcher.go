@@ -1,4 +1,4 @@
-// Pode ser em main.go ou em um novo arquivo, por exemplo, fetcher.go
+// fetcher.go
 package main
 
 import (
@@ -9,8 +9,11 @@ import (
 	// Outros imports necessários
 )
 
+// Define a URL base como uma variável global para permitir sua substituição nos testes
+var baseURL = "https://ipfs.io/ipfs/"
+
 func fetchMetadata(cid string) (*Metadata, error) {
-	url := fmt.Sprintf("https://ipfs.io/ipfs/%s", cid)
+	url := fmt.Sprintf("%s%s", baseURL, cid)
 	resp, err := http.Get(url)
 	if err != nil {
 		return nil, fmt.Errorf("error making request to IPFS: %v", err)
