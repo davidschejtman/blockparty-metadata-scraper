@@ -1,22 +1,12 @@
 # Blockparty Metadata Scraper
 
-## Project Overview
+## Description
 
-This microservice is designed to scrape metadata from IPFS URIs and store it in a PostgreSQL database. It's built with Golang and serves a dual purpose: it performs the scraping task and also provides a RESTful API to access the scraped data.
+The **Blockparty Metadata Scraper** is a tool developed in **Go (Golang)**, designed to scrape metadata from specified IPFS URIs and store it in a **PostgreSQL** database. Additionally, the project exposes two **RESTful endpoints** to retrieve the scraped data, facilitating access and integration with other applications.
 
 ## Features
 
-- Scrapes metadata from a list of provided IPFS CIDs.
-- Stores metadata information in a PostgreSQL database.
-- Exposes RESTful API endpoints:
-  - `GET /tokens` to fetch all stored metadata.
-  - `GET /tokens/<cid>` to fetch metadata for a specific IPFS CID.
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-What things you need to install the software and how to install them:
+- **Metadata Scraping**: Automates the collection of metadata from specified IPFS URIs.
+- **Data Storage**: Saves the scraped metadata in a PostgreSQL database.
+- **RESTful API**: Provides endpoints to retrieve all metadata or specific data by CID.
 
