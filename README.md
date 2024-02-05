@@ -10,3 +10,6 @@ The **Blockparty Metadata Scraper** is a tool developed in **Go (Golang)**, desi
 - **Data Storage**: Saves the scraped metadata in a PostgreSQL database.
 - **RESTful API**: Provides endpoints to retrieve all metadata or specific data by CID.
 
+## DB keys
+The credentials are in a .env file
+
