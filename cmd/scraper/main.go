@@ -10,21 +10,21 @@ import (
 )
 
 func main() {
-	// Inicializa a conexão com o banco de dados
+	// Initialize the connection to the database
 	if err := db.InitDB(); err != nil {
 		log.Fatalf("Failed to initialize the database: %v", err)
 	}
 	defer db.DB.Close()
 
-	// Lê os CIDs a partir de um arquivo (substitua "path/to/your/ipfs_cids.csv" pelo caminho correto do arquivo)
+	// Read CIDs from a file
 	data, err := ioutil.ReadFile("files/ipfs_cids.csv")
 	if err != nil {
 		log.Fatalf("Failed to read CIDs file: %v", err)
 	}
 
-	// Convertendo o conteúdo do arquivo em uma slice de CIDs
+	// Converting the file contents into a CID slice
 	cids := strings.Split(string(data), "\n")
 
-	// Executa o processo de raspagem e armazenamento para cada CID
+	// Run the scraping and storage process for each CID
 	scraper.FetchAndStoreMetadata(cids)
 }
